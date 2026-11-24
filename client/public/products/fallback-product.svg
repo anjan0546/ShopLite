@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#F8FAFC"/>
+  <rect x="20" y="20" width="560" height="560" rx="24" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="8 8" fill="#FFFFFF"/>
+  <circle cx="300" cy="270" r="70" fill="#EFF6FF"/>
+  <path d="M275 295L292 265L305 285L315 270L328 295H275Z" fill="#3B82F6" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="282" cy="255" r="8" fill="#F59E0B"/>
+  <text x="300" y="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#1E293B" text-anchor="middle">ShopLite</text>
+  <text x="300" y="410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#64748B" text-anchor="middle">Product Image Preview</text>
+</svg>

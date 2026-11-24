@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" width="520" height="140">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C1A"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Bag Outer Gradient -->
+    <linearGradient id="bagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <!-- Ribbon S Gradient -->
+    <linearGradient id="sRibbonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#A5F3FC"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <!-- Handle Gradient -->
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+
+    <!-- Lite Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Main Capsule Badge Container -->
+  <rect x="4" y="4" width="512" height="132" rx="26" fill="url(#badgeBg)" stroke="url(#borderGrad)" stroke-width="1.75"/>
+
+  <!-- Subtle ambient glow circle behind emblem -->
+  <circle cx="84" cy="70" r="46" fill="#6366F1" opacity="0.25" filter="url(#neonGlow)"/>
+  <circle cx="84" cy="70" r="30" fill="#00F2FE" opacity="0.3" filter="url(#neonGlow)"/>
+
+  <!-- ==================== ICON EMBLEM ==================== -->
+  <g transform="translate(24, 16)">
+    <!-- Bag Handle Arc -->
+    <path d="M 44 45 C 44 22, 80 22, 80 45" fill="none" stroke="url(#handleGrad)" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Shopping Bag Body with Dynamic Perspective -->
+    <path d="M 30 46 L 94 46 L 102 98 C 102 103, 97 107, 92 107 L 32 107 C 27 107, 22 103, 22 98 Z" fill="url(#bagGrad)" filter="url(#softGlow)"/>
+
+    <!-- Inner 3D Fold / Shadow on Bag -->
+    <path d="M 94 46 L 102 98 C 102 103, 97 107, 92 107 L 80 107 L 74 46 Z" fill="#312E81" opacity="0.4"/>
+
+    <!-- Stylized Futuristic 'S' Ribbon weaved across the bag -->
+    <path d="M 72 57 C 52 54, 46 63, 52 71 C 58 79, 78 77, 74 88 C 71 96, 52 97, 44 93" fill="none" stroke="url(#sRibbonGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonGlow)"/>
+
+    <!-- Speed Spark / Lightning Accent -->
+    <polygon points="94,36 102,48 95,49 98,59 88,47 95,46" fill="#FDE047" filter="url(#softGlow)"/>
+
+    <!-- Orbital Speed Ring around base of the bag -->
+    <ellipse cx="62" cy="98" rx="46" ry="12" fill="none" stroke="url(#borderGrad)" stroke-width="2.75" stroke-dasharray="180 50" transform="rotate(-12 62 98)"/>
+  </g>
+
+  <!-- ==================== TYPOGRAPHY ==================== -->
+  <g transform="translate(160, 0)">
+    <!-- 'Shop' in bold pure white -->
+    <text x="0" y="78" font-family="'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Shop</text>
+
+    <!-- 'Lite' in electric cyan/indigo gradient -->
+    <text x="124" y="78" font-family="'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.5">Lite</text>
+
+    <!-- Glowing Brand Dot -->
+    <circle cx="226" cy="72" r="5.5" fill="#00F2FE" filter="url(#neonGlow)"/>
+    <circle cx="226" cy="72" r="3" fill="#FFFFFF"/>
+
+    <!-- Micro Subtitle / Brand Tagline -->
+    <text x="2" y="103" font-family="'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#94A3B8" letter-spacing="3.5">SMART E-COMMERCE</text>
+
+    <!-- Tech Accent Line -->
+    <line x1="168" y1="99" x2="228" y2="99" stroke="url(#textGrad)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  </g>
+</svg>
