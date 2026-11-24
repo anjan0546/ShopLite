@@ -9,6 +9,7 @@ import {
 } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Checkout.css";
+import { API_BASE_URL } from "../config";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -81,7 +82,7 @@ function Checkout() {
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/orders", {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

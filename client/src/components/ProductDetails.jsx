@@ -18,6 +18,7 @@ import {
 import ProductCard from "./ProductCard";
 import { useToast } from "../context/ToastContext";
 import "./ProductDetails.css";
+import { API_BASE_URL } from "../config";
 
 function ProductDetails({ onAddToCart, allProducts = [] }) {
   const { id } = useParams();
@@ -75,7 +76,7 @@ function ProductDetails({ onAddToCart, allProducts = [] }) {
     }
 
     // Attempt to fetch from API, with fallback to allProducts prop or seed
-    fetch("http://localhost:5000/api/products")
+    fetch(`${API_BASE_URL}/api/products`)
       .then((res) => {
         if (!res.ok) throw new Error("Could not connect to server");
         return res.json();

@@ -6,7 +6,7 @@ import {
 } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Seller.css";
-
+import { API_BASE_URL } from "../config";
 function SellerProducts() {
   const navigate = useNavigate();
   const { addToast } = useToast();
@@ -25,7 +25,7 @@ function SellerProducts() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/sellers/products", {
+      const response = await fetch(`${API_BASE_URL}/api/sellers/products`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -75,7 +75,7 @@ function SellerProducts() {
 
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:5000/api/sellers/products/${id}`, {
+      await fetch(`${API_BASE_URL}/api/sellers/products/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

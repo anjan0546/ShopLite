@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { API_BASE_URL } from "./config";
 import "./App.css";
 
 // Components
@@ -86,7 +87,7 @@ function App() {
   // Fetch products from server, fallback smoothly to mock dataset
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/products")
+   fetch(`${API_BASE_URL}/api/products`)
       .then((res) => {
         if (!res.ok) throw new Error("Server responded with error");
         return res.json();

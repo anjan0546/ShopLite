@@ -4,6 +4,7 @@ import { IconPlus, IconSearch, IconArrowLeft, IconBox } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import { initialMockProducts } from "../data/mockProducts";
 import "./ManageProducts.css";
+import { API_BASE_URL } from "../config";
 
 function ManageProducts() {
   const [products, setProducts] = useState(initialMockProducts);
@@ -20,7 +21,7 @@ function ManageProducts() {
       const token = localStorage.getItem("token");
 
       try {
-        const response = await fetch("http://localhost:5000/api/admin/products", {
+        const response = await fetch(`${API_BASE_URL}/api/admin/products`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +45,7 @@ function ManageProducts() {
     if (!confirmed) return;
 
     try {
-      await fetch(`http://localhost:5000/api/admin/products/${productId}`, {
+      await fetch(`${API_BASE_URL}/api/admin/products/${productId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

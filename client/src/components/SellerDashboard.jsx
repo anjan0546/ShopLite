@@ -8,6 +8,7 @@ import {
 } from "./Icons";
 import "./Seller.css";
 
+
 function SellerDashboard() {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "null");

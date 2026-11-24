@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { IconArrowLeft } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Seller.css";
+import { API_BASE_URL } from "../config";
 
 function EditProduct() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function EditProduct() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        const response = await fetch("http://localhost:5000/api/admin/products", {
+        const response = await fetch(`${API_BASE_URL}/api/admin/products/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -75,7 +76,7 @@ function EditProduct() {
     setError("");
 
     try {
-      await fetch(`http://localhost:5000/api/admin/products/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IconArrowLeft } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Seller.css";
+import { API_BASE_URL } from "../config";
 
 function formatAppDate(dateStr) {
   if (!dateStr) return "Recently";
@@ -27,7 +28,7 @@ function SellerApplications() {
   async function fetchApplications() {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/admin/seller-applications", {
+      const response = await fetch(`${API_BASE_URL}/api/admin/seller-applications`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -49,7 +50,7 @@ function SellerApplications() {
 
   async function updateApplication(id, status) {
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/seller-applications/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/seller-applications/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { IconArrowLeft } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Seller.css";
+import { API_BASE_URL } from "../config";
 
 function SellerEditProduct() {
   const { id } = useParams();
@@ -29,7 +30,7 @@ function SellerEditProduct() {
           return;
         }
 
-        const response = await fetch("http://localhost:5000/api/sellers/products", {
+        const response = await fetch(`${API_BASE_URL}/api/seller/products/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -83,7 +84,7 @@ function SellerEditProduct() {
 
     try {
       const token = localStorage.getItem("token");
-      await fetch(`http://localhost:5000/api/sellers/products/${id}`, {
+      await fetch(`${API_BASE_URL}/api/sellers/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

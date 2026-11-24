@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IconArrowLeft, IconPlus } from "./Icons";
 import { useToast } from "../context/ToastContext";
+import { API_BASE_URL } from "../config";
 import "./AddProduct.css";
 
 function AddProduct() {
@@ -51,7 +52,7 @@ function AddProduct() {
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/admin/products", {
+      const response = await fetch(`${API_BASE_URL}/api/admin/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

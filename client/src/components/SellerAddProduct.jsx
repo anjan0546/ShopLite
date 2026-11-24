@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { IconArrowLeft, IconPlus, IconCheck } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./Seller.css";
+import { API_BASE_URL } from "../config";
 
 function SellerAddProduct() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function SellerAddProduct() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/sellers/products", {
+      const response = await fetch(`${API_BASE_URL}/api/sellers/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

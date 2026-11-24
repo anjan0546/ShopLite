@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./Chatbot.css";
-
+import { API_BASE_URL } from "../config";
 const QUICK_CHIPS = [
   "📦 Track Order",
   "🎉 Coupon Code",
@@ -56,7 +56,7 @@ function Chatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/chat", {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

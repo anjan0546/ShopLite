@@ -10,6 +10,7 @@ import {
 } from "./Icons";
 import { useToast } from "../context/ToastContext";
 import "./MyOrder.css";
+import { API_BASE_URL } from "../config";
 
 function MyOrders({ onAddToCart }) {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function MyOrders({ onAddToCart }) {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/orders/my-orders",
+          `${API_BASE_URL}/api/orders/my-orders`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
